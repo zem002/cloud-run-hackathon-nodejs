@@ -23,6 +23,7 @@ app.post('/', function (req, res) {
   console.log(arenaDimenions)
   console.log(states)
   console.log(states[selfLink])
+  res.send('T');
   
 });
 
