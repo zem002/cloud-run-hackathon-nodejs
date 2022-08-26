@@ -9,9 +9,20 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  console.log(req.body._links.self);
-  const moves = ['F', 'T', 'L', 'R'];
-  res.send(moves[Math.floor(Math.random() * moves.length)]);
+  try{
+    const selfLink = eq.body._links.self.href;
+  }catch(err){
+    console.log(req.body);
+    const moves = ['F', 'T', 'L', 'R'];
+    res.send(moves[Math.floor(Math.random() * moves.length)]);
+    return
+  }
+  console.log(selfLink);
+  let arenaDimenions = req.body.arena.dims;
+  console.log(arenaDimenions)
+  let states = req.body.arena.states;
+  console.log(states[selfLink])
+  
 });
 
 app.listen(process.env.PORT || 8080);
