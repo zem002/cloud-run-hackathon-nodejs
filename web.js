@@ -13,7 +13,7 @@ app.post('/', function (req, res) {
   try{
     selfLink = req.body._links.self.href;
     arenaDimenions = req.body.arena.dims;
-    states = req.body.arena.states;
+    states = req.body.arena.state;
   }catch(err){
     console.log(err);
     const moves = ['F', 'T', 'L', 'R'];
@@ -22,6 +22,7 @@ app.post('/', function (req, res) {
   console.log(selfLink);
   console.log(arenaDimenions)
   console.log(states)
+  console.log(states[selfLink])
   
 });
 
