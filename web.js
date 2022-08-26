@@ -21,7 +21,7 @@ app.post('/', function (req, res) {
   }
   console.log(selfLink);
   console.log(arenaDimenions)
-  console.log(states[selfLink])
+  console.log(states)
   
 });
 
