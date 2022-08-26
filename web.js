@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   try{
-    const selfLink = eq.body._links.self.href;
+    const selfLink = req.body._links.self.href;
   }catch(err){
     console.log(req.body);
     const moves = ['F', 'T', 'L', 'R'];
