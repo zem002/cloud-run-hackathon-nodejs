@@ -16,14 +16,14 @@ app.post('/', function (req, res) {
     states = req.body.arena.state;
   }catch(err){
     console.log(err);
-    const moves = ['F', 'T', 'L', 'R'];
-    res.send(moves[Math.floor(Math.random() * moves.length)]);
+    res.send('T');
   }
   console.log(selfLink);
   console.log(arenaDimenions)
   console.log(states)
   console.log(states[selfLink])
-  res.send('T');
+  const moves = ['F', 'T', 'L', 'R'];
+  res.send(moves[Math.floor(Math.random() * moves.length)]);
   
 });
 
