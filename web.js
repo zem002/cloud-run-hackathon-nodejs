@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  console.log(req.body);
+  console.log(req.body._links.self);
   const moves = ['F', 'T', 'L', 'R'];
   res.send(moves[Math.floor(Math.random() * moves.length)]);
 });
