@@ -9,18 +9,18 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
+  let selfLink, arenaDimenions, states;
   try{
-    const selfLink = req.body._links.self.href;
+    selfLink = req.body._links.self.href;
+    arenaDimenions = req.body.arena.dims;
+    states = req.body.arena.states;
   }catch(err){
-    console.log(req.body);
+    console.log(err);
     const moves = ['F', 'T', 'L', 'R'];
     res.send(moves[Math.floor(Math.random() * moves.length)]);
-    return
   }
   console.log(selfLink);
-  let arenaDimenions = req.body.arena.dims;
   console.log(arenaDimenions)
-  let states = req.body.arena.states;
   console.log(states[selfLink])
   
 });
